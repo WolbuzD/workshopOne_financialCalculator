@@ -37,6 +37,22 @@ public class Main {
                 System.out.printf("Total Interest Paid: $%.2f\n", totalInterest);
                 break;
             case 2:
+                System.out.println("\n--- Future Value Calculator ---");
+                System.out.print("Enter the initial deposit: ");
+                double deposit = scanner.nextDouble();
+
+                System.out.print("Enter the annual interest rate: ");
+                double fvAnnualRate = scanner.nextDouble() / 100; //fv: stands for future value
+
+                System.out.print("Enter the number of years: ");
+                int fvYears = scanner.nextInt();
+
+                double futureValue = deposit * Math.pow((1 + fvAnnualRate / 365), 365 * fvYears);
+                double fvInterest = futureValue - deposit;
+
+                System.out.printf("Future Value: $%.2f\n", futureValue);
+                System.out.printf("Total Interest Earned: $%.2f\n", fvInterest);
+                break;
             case 3:
             default:
         }

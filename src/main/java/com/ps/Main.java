@@ -54,6 +54,24 @@ public class Main {
                 System.out.printf("Total Interest Earned: $%.2f\n", fvInterest);
                 break;
             case 3:
+                System.out.println("\n--- Present Value of Annuity Calculator ---");
+                System.out.print("Enter the monthly payout: ");
+                double payout = scanner.nextDouble();
+                   //pv= present value
+                System.out.print("Enter the annual interest rate: ");
+                double pvAnnualRate = scanner.nextDouble() / 100;
+
+                System.out.print("Enter the number of years: ");
+                int pvYears = scanner.nextInt();
+
+                double pvMonthlyRate = pvAnnualRate / 12;
+                int pvMonths = pvYears * 12;
+
+                double presentValue = payout * (1 - Math.pow(1 + pvMonthlyRate, -pvMonths)) / pvMonthlyRate;
+
+                System.out.printf("Present Value Needed Today: $%.2f\n", presentValue);
+                break;
+
             default:
         }
 

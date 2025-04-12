@@ -73,6 +73,7 @@ public class Main {
                 break;
 
             default:
+                System.out.println("Invalid choice. Please run the program again.");
         }
 
 

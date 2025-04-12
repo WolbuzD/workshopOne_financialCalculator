@@ -35,6 +35,13 @@ public class Main {
                 System.out.printf("Monthly Payment: $%.2f\n", monthlyPayment);
                 //Notes: I am adding "\n" to print whatever variable I want to display on a new line
                 System.out.printf("Total Interest Paid: $%.2f\n", totalInterest);
+
+                //I want to add a Detailed summary of everything that happened:
+                System.out.println("\n--- Calculation Summary ---");
+                System.out.printf("Loan Amount: $%.2f\n", principal);
+                System.out.printf("Interest Rate: %.3f%%\n", annualRate);
+                System.out.printf("Monthly Payment: $%.2f\n", monthlyPayment);
+                System.out.printf("Total Interest Paid: $%.2f\n", totalInterest);
                 break;
             case 2:
                 System.out.println("\n--- Future Value Calculator ---");
@@ -50,6 +57,13 @@ public class Main {
                 double futureValue = deposit * Math.pow((1 + fvAnnualRate / 365), 365 * fvYears);
                 double fvInterest = futureValue - deposit;
 
+                System.out.printf("Future Value: $%.2f\n", futureValue);
+                System.out.printf("Total Interest Earned: $%.2f\n", fvInterest);
+
+                //See the Summary below
+                System.out.println("\n--- Calculation Summary ---");
+                System.out.printf("Initial Deposit: $%.2f\n", deposit);
+                System.out.printf("Interest Rate: %.3f%%\n", fvAnnualRate);
                 System.out.printf("Future Value: $%.2f\n", futureValue);
                 System.out.printf("Total Interest Earned: $%.2f\n", fvInterest);
                 break;
@@ -70,6 +84,12 @@ public class Main {
                 double presentValue = payout * (1 - Math.pow(1 + pvMonthlyRate, -pvMonths)) / pvMonthlyRate;
 
                 System.out.printf("Present Value Needed Today: $%.2f\n", presentValue);
+
+                //See the Summary bellow:
+                System.out.println("\n--- Calculation Summary ---");
+                System.out.printf("Monthly Payout: $%.2f\n", payout);
+                System.out.printf("Interest Rate: %.3f%%\n", pvAnnualRate * 100);
+                System.out.printf("Present Value Needed: $%.2f\n", presentValue);
                 break;
 
             default:

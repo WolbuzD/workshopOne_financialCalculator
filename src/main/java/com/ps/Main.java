@@ -49,12 +49,12 @@ public class Main {
                 double initialDeposit = scanner.nextDouble();
 
                 System.out.print("Enter the annual interest rate: ");
-                double annualInterestRate_fvc = scanner.nextDouble() / 100; //fv: stands for future value
+                double annualInterestRate_fvCal = scanner.nextDouble() / 100; //fv: stands for future value
 
                 System.out.print("Enter the number of years: ");
                 int investmentYears = scanner.nextInt();
 
-                double futureValue = initialDeposit * Math.pow((1 + annualInterestRate_fvc / 365), 365 * investmentYears);
+                double futureValue = initialDeposit * Math.pow((1 + annualInterestRate_fvCal / 365), 365 * investmentYears);
                 double totalInterestEarned = futureValue - initialDeposit;
 
                 System.out.printf("Future Value: $%.2f\n", futureValue);
@@ -63,7 +63,7 @@ public class Main {
                 //See the Summary below
                 System.out.println("\n--- Calculation Summary ---");
                 System.out.printf("Initial Deposit: $%.2f\n", initialDeposit);
-                System.out.printf("Interest Rate: %.3f%%\n", annualInterestRate_fvc);
+                System.out.printf("Interest Rate: %.3f%%\n", annualInterestRate_fvCal);
                 System.out.printf("Future Value: $%.2f\n", futureValue);
                 System.out.printf("Total Interest Earned: $%.2f\n", totalInterestEarned);
                 break;

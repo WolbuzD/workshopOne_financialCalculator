@@ -46,26 +46,26 @@ public class Main {
             case 2:
                 System.out.println("\n--- Future Value Calculator ---");
                 System.out.print("Enter the initial deposit: ");
-                double deposit = scanner.nextDouble();
+                double initialDeposit = scanner.nextDouble();
 
                 System.out.print("Enter the annual interest rate: ");
-                double fvAnnualRate = scanner.nextDouble() / 100; //fv: stands for future value
+                double annualInterestRate_fvc = scanner.nextDouble() / 100; //fv: stands for future value
 
                 System.out.print("Enter the number of years: ");
-                int fvYears = scanner.nextInt();
+                int investmentYears = scanner.nextInt();
 
-                double futureValue = deposit * Math.pow((1 + fvAnnualRate / 365), 365 * fvYears);
-                double fvInterest = futureValue - deposit;
+                double futureValue = initialDeposit * Math.pow((1 + annualInterestRate_fvc / 365), 365 * investmentYears);
+                double totalInterestEarned = futureValue - initialDeposit;
 
                 System.out.printf("Future Value: $%.2f\n", futureValue);
-                System.out.printf("Total Interest Earned: $%.2f\n", fvInterest);
+                System.out.printf("Total Interest Earned: $%.2f\n", totalInterestEarned);
 
                 //See the Summary below
                 System.out.println("\n--- Calculation Summary ---");
-                System.out.printf("Initial Deposit: $%.2f\n", deposit);
-                System.out.printf("Interest Rate: %.3f%%\n", fvAnnualRate);
+                System.out.printf("Initial Deposit: $%.2f\n", initialDeposit);
+                System.out.printf("Interest Rate: %.3f%%\n", annualInterestRate_fvc);
                 System.out.printf("Future Value: $%.2f\n", futureValue);
-                System.out.printf("Total Interest Earned: $%.2f\n", fvInterest);
+                System.out.printf("Total Interest Earned: $%.2f\n", totalInterestEarned);
                 break;
             case 3:
                 System.out.println("\n--- Present Value of Annuity Calculator ---");

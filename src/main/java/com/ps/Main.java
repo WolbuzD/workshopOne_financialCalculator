@@ -70,25 +70,25 @@ public class Main {
             case 3:
                 System.out.println("\n--- Present Value of Annuity Calculator ---");
                 System.out.print("Enter the monthly payout: ");
-                double payout = scanner.nextDouble();
+                double monthlyPayout = scanner.nextDouble();
                    //pv= present value
                 System.out.print("Enter the annual interest rate: ");
-                double pvAnnualRate = scanner.nextDouble() / 100;
+                double annualInterestRate_pvaCal = scanner.nextDouble() / 100;
 
                 System.out.print("Enter the number of years: ");
-                int pvYears = scanner.nextInt();
+                int annuityYears = scanner.nextInt();
 
-                double pvMonthlyRate = pvAnnualRate / 12;
-                int pvMonths = pvYears * 12;
+                double monthlyInterestRate_pvaCal = annualInterestRate_pvaCal / 12;
+                int totalMonths = annuityYears * 12;
 
-                double presentValue = payout * (1 - Math.pow(1 + pvMonthlyRate, -pvMonths)) / pvMonthlyRate;
+                double presentValue = monthlyPayout * (1 - Math.pow(1 + monthlyInterestRate_pvaCal, -totalMonths)) / monthlyInterestRate_pvaCal;
 
                 System.out.printf("Present Value Needed Today: $%.2f\n", presentValue);
 
                 //See the Summary bellow:
                 System.out.println("\n--- Calculation Summary ---");
-                System.out.printf("Monthly Payout: $%.2f\n", payout);
-                System.out.printf("Interest Rate: %.3f%%\n", pvAnnualRate * 100);
+                System.out.printf("Monthly Payout: $%.2f\n", monthlyPayout);
+                System.out.printf("Interest Rate: %.3f%%\n", annualInterestRate_pvaCal * 100);
                 System.out.printf("Present Value Needed: $%.2f\n", presentValue);
                 break;
 

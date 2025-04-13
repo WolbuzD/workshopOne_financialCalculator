@@ -20,17 +20,17 @@ public class Main {
                 double principal = scanner.nextDouble();
 
                 System.out.print("Enter the annual interest rate: ");
-                double annualRate = scanner.nextDouble() / 100;
+                double annualInterestRate = scanner.nextDouble() / 100;
 
                 System.out.print("Enter the loan term in years: ");
                 int years = scanner.nextInt();
 
-                double monthlyRate = annualRate / 12;
-                int months = years * 12;
+                double monthlyInterestRate = annualInterestRate / 12;
+                int loanTermMonths = years * 12;
 
-                double monthlyPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, months)) /
-                        (Math.pow(1 + monthlyRate, months) - 1);
-                double totalInterest = (monthlyPayment * months) - principal;
+                double monthlyPayment = principal * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, loanTermMonths)) /
+                        (Math.pow(1 + monthlyInterestRate, loanTermMonths) - 1);
+                double totalInterest = (monthlyPayment * loanTermMonths) - principal;
 
                 System.out.printf("Monthly Payment: $%.2f\n", monthlyPayment);
                 //Notes: I am adding "\n" to print whatever variable I want to display on a new line
@@ -39,7 +39,7 @@ public class Main {
                 //I want to add a Detailed summary of everything that happened:
                 System.out.println("\n--- Calculation Summary ---");
                 System.out.printf("Loan Amount: $%.2f\n", principal);
-                System.out.printf("Interest Rate: %.3f%%\n", annualRate);
+                System.out.printf("Interest Rate: %.3f%%\n", annualInterestRate);
                 System.out.printf("Monthly Payment: $%.2f\n", monthlyPayment);
                 System.out.printf("Total Interest Paid: $%.2f\n", totalInterest);
                 break;
